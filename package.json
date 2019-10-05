@@ -1,7 +1,12 @@
 {
+  "name": "gpx-replay",
+  "version": "0.0.1",
   "scripts": {
-    "start": "clear && cd ./react && react-scripts start",
-    "build": "clear && cd ./react && react-scripts build",
-    "test": "clear && cd ./react && react-scripts test"
-  }
+    "start": "clear && cd ./react && yarn start",
+    "build": "clear && cd ./react && yarn build"
+  },
+  "main": "index.js",
+  "repository": "https://github.com/listingslab/gpx-replay.git",
+  "author": "listingslab <listingslab@gmail.com>",
+  "license": "MIT"
 }
