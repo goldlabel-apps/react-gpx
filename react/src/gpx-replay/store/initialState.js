@@ -1,7 +1,7 @@
-import { systemState } from './system/system.reducer';
+import { userEntityState } from './userEntity/userEntity.reducer';
 
 const initialState = {
-	system: { systemState },
+	userEntity: { userEntityState },
 };
 
 export default initialState;
