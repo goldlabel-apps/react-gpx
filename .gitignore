@@ -2,8 +2,10 @@ __dev
 
 .firebase
 
+/react/.env.development
+/react/.env.production
 
-/build
+build
 
 # Logs
 logs

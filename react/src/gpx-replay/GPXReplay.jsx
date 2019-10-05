@@ -4,22 +4,16 @@ import { persistStore } from "redux-persist";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/es/integration/react";
 import { configureStore } from "./store/configureStore";
-import { withStyles } from '@material-ui/styles';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import theme from './style/theme';
-// import cn from 'classnames';
 import {
     CssBaseline,
 } from '@material-ui/core/';
-import Auth from './views/Auth';
-import Home from './views/Home';
+import {
+    Auth,
+    Home,
+} from './views/';
 
-const styles = () => ({
-    container: {
-        margin: 'auto',
-        maxWidth: 800,
-    }
-});
 const store = configureStore();
 const persistor = persistStore(store);
 
@@ -47,4 +41,4 @@ class GPXReplay extends Component {
     }
 }
 
-export default withStyles(styles)(GPXReplay);
+export default GPXReplay;
