@@ -1,0 +1,7 @@
+{
+  "scripts": {
+    "start": "clear && cd ./react && react-scripts start",
+    "build": "clear && cd ./react && react-scripts build",
+    "test": "clear && cd ./react && react-scripts test"
+  }
+}
