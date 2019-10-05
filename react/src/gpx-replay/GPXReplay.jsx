@@ -11,6 +11,7 @@ import theme from './style/theme';
 import {
     CssBaseline,
 } from '@material-ui/core/';
+import Auth from './views/Auth';
 import Home from './views/Home';
 
 const styles = () => ({
@@ -33,6 +34,9 @@ class GPXReplay extends Component {
                             <Switch>
                                 <Route exact path="/" render={props => {
                                     return (<Home />);
+                                }} />
+                                <Route exact path="/auth" render={props => {
+                                    return (<Auth />);
                                 }} />
                             </Switch>
                         </Router>

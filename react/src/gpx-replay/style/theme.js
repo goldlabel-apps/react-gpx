@@ -1,11 +1,9 @@
 import textColours from "./textColours";
 // const { brand } = window.pwaConfig;
-const primary = `#000`;
-const secondary = `#222`;
+const primary = `#912a2d`;
+const secondary = `#d23e42`;
 let text = textColours.light;
-// if (brand.colours.text === `light`) {
-//   text = textColours.light;
-// }
+
 const theme = {
   palette: {
     primary: {
