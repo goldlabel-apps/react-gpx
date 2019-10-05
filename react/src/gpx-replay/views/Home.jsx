@@ -18,10 +18,14 @@ class Home extends Component {
     render() {
         const {
             classes,
-            // history,
-            store
+            history,
+            user
         } = this.props;
-        console.log('store', store)
+        console.log('user', user)
+        if (!user.authed) {
+            history.push(`/auth`)
+            return null;
+        }
 
         return (
             <div className={cn(classes.view)}>
@@ -47,6 +51,7 @@ class Home extends Component {
 
 const mapStateToProps = (store) => {
     return {
+        user: store.userEntity.userEntityState.user,
         store
     };
 };
@@ -63,13 +68,3 @@ export default (
         mapDispatchToProps
     )(withStyles(styles, { withTheme: true })(withRouter(Home)))
 );
-
-/*
-
-
-<CardMedia
-                            className={classes.media}
-                            image={`/logo512.png`}
-                            title={`Firebase/Node REST API`}
-                        />
-*/

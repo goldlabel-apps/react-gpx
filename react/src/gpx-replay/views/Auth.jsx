@@ -20,9 +20,11 @@ class Auth extends Component {
         const {
             classes,
             // history,
-            store
+            user
         } = this.props;
-        console.log('store', store)
+
+
+
 
         return (
             <div className={cn(classes.view)}>
@@ -40,7 +42,13 @@ class Auth extends Component {
                         />
                         <CardContent>
                             <Typography variant={`body1`}>
-                                GPX, or GPS Exchange Format
+                                fingerprint: {user.fingerprint}
+                            </Typography>
+                            <Typography variant={`body1`}>
+                                ip: {user.fingerprint}
+                            </Typography>
+                            <Typography variant={`body1`}>
+                                userAgent: {user.userAgent}
                             </Typography>
                         </CardContent>
                     </Card>
@@ -52,6 +60,7 @@ class Auth extends Component {
 
 const mapStateToProps = (store) => {
     return {
+        user: store.userEntity.userEntityState.user,
         store
     };
 };
