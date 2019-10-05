@@ -17,7 +17,6 @@ const styles = () => ({
     container: {
         margin: 'auto',
         maxWidth: 800,
-        // border: '1px solid grey',
     }
 });
 const store = configureStore();

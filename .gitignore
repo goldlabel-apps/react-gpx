@@ -2,9 +2,8 @@ __dev
 
 .firebase
 
-# Themes
-/react/public/themes/cwx
-/react/src/react-playing-cards/style/themes/cwx
+
+/build
 
 # Logs
 logs

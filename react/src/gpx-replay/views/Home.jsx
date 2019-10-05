@@ -18,8 +18,10 @@ class Home extends Component {
     render() {
         const {
             classes,
-            history
+            history,
+            store
         } = this.props;
+        console.log('store', store)
 
         return (
             <div className={cn(classes.view)}>
