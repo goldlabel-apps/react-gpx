@@ -6,19 +6,19 @@ import cn from 'classnames';
 import { styles } from '../style/AppShell.Style';
 import {
     Avatar,
-    IconButton,
     Card,
     CardHeader,
-    CardMedia,
+    CardContent,
+    Typography
 } from '@material-ui/core/';
-import IconRefresh from '@material-ui/icons/RefreshTwoTone';
+// import IconRefresh from '@material-ui/icons/RefreshTwoTone';
 
 class Home extends Component {
 
     render() {
         const {
             classes,
-            history,
+            // history,
             store
         } = this.props;
         console.log('store', store)
@@ -29,29 +29,15 @@ class Home extends Component {
                     <Card className={classes.card}>
                         <CardHeader
                             title={`GPX Replay`}
-                            subheader="RESTful API with Cloud Functions"
-                            avatar={
-                                <Avatar className={classes.avatar}>
-                                    <IconRefresh icon={`refresh`} />
-                                </Avatar>
-                            }
-                            action={
-                                <IconButton
-                                    aria-label={`Home`}
-                                    color={`primary`}
-                                    onClick={(e) => {
-                                        e.preventDefault();
-                                        history.push(`/`);
-                                    }}>
-                                    <IconRefresh icon={`refresh`} />
-                                </IconButton>
-                            }
+                            subheader="Got location data?"
+                            avatar={<Avatar src={`/logo192.png`} />}
                         />
-                        <CardMedia
-                            className={classes.media}
-                            image={`/logo512.png`}
-                            title={`Firebase/Node REST API`}
-                        />
+                        <CardContent>
+                            <Typography variant={`body1`}>
+                                GPX, or GPS Exchange Format, is an XML schema designed as a common GPS data format for software applications. It can be used to describe waypoints, tracks, and routes. The format is open and can be used without the need to pay license fees. Location data (and optionally elevation, time, and other information) is stored in tags and can be interchanged between GPS devices and software. Common software applications for the data include viewing tracks projected onto various map sources, annotating maps, and geotagging photographs based on the time they were taken.
+                            </Typography>
+                        </CardContent>
+
                     </Card>
                 </div>
             </div>
@@ -79,11 +65,11 @@ export default (
 );
 
 /*
-<CardContent>
-  <Typography variant={`body1`}>
-    An application program interface (API) is a set of routines, protocols,
-    and tools for building software applications. A good API makes it easier to develop a program by providing all the building blocks.
-    A programmer then puts the blocks together.
-  </Typography>
-</CardContent>
+
+
+<CardMedia
+                            className={classes.media}
+                            image={`/logo512.png`}
+                            title={`Firebase/Node REST API`}
+                        />
 */

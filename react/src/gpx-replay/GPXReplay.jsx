@@ -23,9 +23,7 @@ const store = configureStore();
 const persistor = persistStore(store);
 
 class GPXReplay extends Component {
-
     render() {
-        // const { classes } = this.props
         return (
             <Provider store={store}>
                 <PersistGate loading={null} persistor={persistor}>
