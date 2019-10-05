@@ -1,9 +1,12 @@
+import packageJSON from "../package.json";
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import { GPXReplay } from './gpx-replay';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+console.log(`${packageJSON.name} ${packageJSON.version}`);
+// (${process.env.REACT_APP_ENV})
+
+ReactDOM.render(<GPXReplay />, document.getElementById('root'));
 
 serviceWorker.register();
