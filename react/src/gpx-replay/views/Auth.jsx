@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from "react-router";
 import { connect } from 'react-redux';
+import { newFingerprint } from '../store/userEntity/userEntity.actions';
 import { withStyles } from '@material-ui/core/styles';
 import cn from 'classnames';
 import { styles } from '../style/AppShell.Style';
@@ -15,6 +16,24 @@ import {
 // import IconRefresh from '@material-ui/icons/RefreshTwoTone';
 
 class Auth extends Component {
+
+    componentDidMount() {
+        const {
+            newFingerprint,
+            user,
+        } = this.props;
+        const {
+            fingerprint
+        } = user;
+
+        if (!fingerprint) {
+
+            newFingerprint();
+
+        }
+    }
+
+
 
     render() {
         const {
@@ -42,13 +61,13 @@ class Auth extends Component {
                         />
                         <CardContent>
                             <Typography variant={`body1`}>
-                                fingerprint: {user.fingerprint}
+                                Fingerprint > {user.fingerprint}
                             </Typography>
                             <Typography variant={`body1`}>
-                                ip: {user.fingerprint}
+                                IP > {user.fingerprint}
                             </Typography>
                             <Typography variant={`body1`}>
-                                userAgent: {user.userAgent}
+                                User Agent > {user.userAgent}
                             </Typography>
                         </CardContent>
                     </Card>
@@ -67,7 +86,7 @@ const mapStateToProps = (store) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        // systemToggleTopAppBar: (bool) => dispatch(systemToggleTopAppBar(bool)),
+        newFingerprint: () => dispatch(newFingerprint()),
     };
 };
 

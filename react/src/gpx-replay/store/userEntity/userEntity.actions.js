@@ -1,17 +1,22 @@
+import Fingerprint2 from 'fingerprintjs2';
 // userEntity
 
-export function userEntityOpenMessage(params) {
+export function newFingerprint() {
+  Fingerprint2.get(function (components) {
+    console.log(components);
+  })
+  console.log('newFingerprint');
   return (dispatch) => {
-    dispatch(_reduce.systemOpenMessage(params));
+    dispatch(_reduce.newFingerprint());
   }
 }
 
-const _reduce = {
 
-  userEntityOpenMessage: (params) => {
+const _reduce = {
+  newFingerprint: (fingerprint) => {
     return {
-      type: 'USERENTITY/OPEN/MESSAGE',
-      params
+      type: 'USERENTITY/NEW/FINGERPRINT',
+      fingerprint
     };
   },
 
